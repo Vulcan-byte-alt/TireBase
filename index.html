@@ -28,447 +28,226 @@
   <style>
     /* Hoverable Class */
 
-    .hoverable {
-
-      transition: all 0.3s ease;
-
-    }
-
-    /* Content Box Styling */
-
-    .content-box {
-
-      background-color: white;
-
-      border-radius: 12px;
-
-      /* Elegant rounded corners */
-
-      padding: 24px;
-
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-
-      backdrop-filter: blur(8px);
-
-      background-color: rgba(255, 255, 255, 0.6);
-
-      transition: transform 0.3s ease, border 0.3s ease;
-
-      border: 2px solid transparent;
-
-      /* Default border */
-
-      position: relative;
-
-      /* Prevents layout shift */
-
-      overflow: hidden;
-
-      /* Prevents image overflow */
-
-    }
-
-    /* Hover Effects */
-
-    .content-box:hover {
-
-      transform: scale(1.05);
-
-      /* Smooth zoom effect */
-
-      border: 4px solid #3182ce;
-
-      /* Blue border on hover */
-
-      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
-
-    }
-
-    /* Ensuring smooth scaling */
-
-    .content-box:hover {
-
-      transform-origin: center center;
-
-      /* Keeps the element centered while zooming */
-
-    }
-
-    /* Image Placeholder Styling */
-
-    .image-placeholder {
-
-      background-color: #f1f1f1;
-
-      border-radius: 8px;
-
-      border: 2px solid #ddd;
-
-      padding: 20px;
-
-      text-align: center;
-
-      margin-bottom: 16px;
-
-      position: relative;
-
-    }
-
-    .image-placeholder span {
-
-      color: #999;
-
-      font-size: 14px;
-
-      font-weight: bold;
-
-    }
-
-    /* Additional Content Styles */
-
-    .content-box h3 {
-
-      margin-top: 16px;
-
-      font-size: 1.25rem;
-
-    }
-
-    .content-box p {
-
-      margin-top: 8px;
-
-      font-size: 1rem;
-
-      color: #4a4a4a;
-
-    }
-
-    .content-box a {
-
-      margin-top: 16px;
-
-      display: inline-block;
-
-      font-weight: bold;
-
-    }
-
-    .content-box a:hover {
-
-      color: #2b6cb0;
-
-      /* Darker blue on hover */
-
-    }
-
-    #nav {
-
-      overflow: hidden;
-
-    }
-
-    .tab-button {
-
-      font-family: 'Söhne', sans-serif;
-
-      /* Ensure the font is loaded */
-
-      padding: 0.75rem 1.5rem;
-
-      /* Balanced padding */
-
-      font-size: 1.2rem;
-
-      /* Adjusted font size */
-
-      font-weight: 600;
-
-      /* Semi-bold for a clean look */
-
-      color: #bbafaf;
-
-      /* Neutral text color */
-
-      text-transform: uppercase;
-
-      /* Uppercase text for modern touch */
-
-      letter-spacing: 1px;
-
-      /* Slight letter-spacing for readability */
-
-      border: none;
-
-      outline: none;
-
-      background: none;
-
-      cursor: pointer;
-
-      transition: all 0.3s ease;
-
-      /* Smooth transition */
-
-    }
-
-    .tab-button:hover {
-
-      color: orange;
-
-    }
-
-    .tab-content:hover .dynamic-heading,
-
-    .tab-content:hover img {
-
-      transform: none;
-
-      /* Prevent elements from shifting up */
-
-      border-radius: 12px;
-
-    }
-
-    .active-tab {
-
-      color: #FFA500;
-
-      /* Highlight Color */
-
-      border-bottom: 4px solid #FFA500;
-
-    }
-
-    #content {
-
-      overflow: hidden;
-
-    }
-
-    .word {
-
-      display: inline-block;
-
+      /* Hoverable Class */
+  .hoverable {
+    transition: all 0.3s ease;
+  }
+
+  /* Content Box Styling */
+  .content-box {
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px);
+    transition: transform 0.3s ease, border 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden; /* Prevents image overflow */
+  }
+
+  /* Hover Effects */
+  .content-box:hover {
+    transform: scale(1.03); /* Slightly reduced scaling */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+    border: 4px solid #3182ce;
+    transform-origin: center center; /* Keeps the element centered while zooming */
+  }
+
+  /* Image Placeholder Styling */
+  .image-placeholder {
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    border: 2px solid #ddd;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .image-placeholder span {
+    color: #999;
+    font-size: 14px;
+    font-weight: bold;
+  }
+
+  /* Additional Content Styles */
+  .content-box h3 {
+    margin-top: 16px;
+    font-size: 1.25rem;
+  }
+
+  .content-box p {
+    margin-top: 8px;
+    font-size: 1rem;
+    color: #4a4a4a;
+  }
+
+  .content-box a {
+    margin-top: 16px;
+    display: inline-block;
+    font-weight: bold;
+  }
+
+  .content-box a:hover {
+    color: #2b6cb0;
+  }
+
+  /* Tab Button Styling */
+  .tab-button {
+    font-family: 'Söhne', sans-serif;
+    padding: 0.75rem 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #bbafaf;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .tab-button:hover {
+    color: orange;
+  }
+
+  .active-tab {
+    color: #ffa500;
+    border-bottom: 4px solid #ffa500;
+    background: rgba(255, 165, 0, 0.1); /* Subtle orange background */
+  }
+
+  /* Tab Navigation Container */
+  #nav {
+    display: flex;
+    overflow-x: auto; /* Allow horizontal scrolling */
+    scroll-snap-type: x mandatory; /* Enable snapping */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    padding-bottom: 4px;
+    height: 50px;
+  }
+
+  .tab-button {
+    scroll-snap-align: start; /* Ensure proper alignment */
+  }
+
+  /* Tab Content Styling */
+  .tab-content {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  .tab-content:not(.hidden) {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Dynamic Heading Animation */
+  .word {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(10px);
+    font-size: 2.25rem; /* Tailwind's text-4xl */
+    font-weight: 700;
+    background: linear-gradient(90deg, #f97416c5, #3b83f6bc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+    margin-right: 0.25rem; /* Add space between words */
+  }
+
+  .word.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .dynamic-heading {
+    white-space: normal;
+    line-height: 1.5; /* Improve readability */
+  }
+
+  /* Image Animation */
+  #img {
+    opacity: 0;
+    transform: translateX(-30px);
+    animation: fadeInImage 0.8s ease-out forwards;
+    transform-origin: center center;
+    border-radius: inherit;
+  }
+
+  @keyframes fadeInImage {
+    0% {
       opacity: 0;
-
-      transform: translateY(10px);
-
-      font-size: 2.25rem;
-
-      /* Tailwind's text-4xl */
-
-      font-weight: 700;
-
-      /* Tailwind's font-bold */
-
-      background: linear-gradient(90deg, #f97416c5, #3b83f6bc);
-
-      /* Orange to Blue gradient */
-
-      -webkit-background-clip: text;
-
-      -webkit-text-fill-color: transparent;
-
-      transition: opacity 0.5s ease, transform 0.5s ease;
-
-      margin-right: 0.25rem;
-
-      /* Add space between words */
-
+      transform: translateX(-30px);
     }
-
-    .word.visible {
-
+    100% {
       opacity: 1;
-
-      transform: translateY(0);
-
-    }
-
-    .dynamic-heading {
-
-      white-space: normal;
-
-      /* Ensure proper wrapping */
-
-      line-height: 1.5;
-
-      /* Improve readability */
-
-    }
-
-    /* Base setup for .tab-content */
-
-    #content {
-
-      position: relative;
-
-      overflow: hidden;
-
-      /* Prevent overflow when scaling */
-
-      border-radius: 15px;
-
-      /* Ensure a consistent border radius */
-
-      opacity: 0;
-
-      /* Start invisible */
-
-      transform: translateX(100%);
-
-      /* Start off-screen to the right */
-
-      animation: slideInContent 0.8s ease-out forwards;
-
-      /* Content slide animation */
-
-    }
-
-    /* Slide-in animation for content (from right to left) */
-
-    @keyframes slideInContent {
-
-      0% {
-
-        transform: translateX(100%);
-
-        /* Start off-screen to the right */
-
-        opacity: 0;
-
-      }
-
-      100% {
-
-        transform: translateX(0);
-
-        /* End at normal position */
-
-        opacity: 1;
-
-      }
-
-    }
-
-    /* Apply a different animation for images (from left to right) */
-
-    #img {
-
-      opacity: 0;
-
-      /* Start invisible */
-
-      transform: translateX(-100%);
-
-      /* Start off-screen to the left */
-
-      animation: slideInImage 0.8s ease-out forwards;
-
-      /* Image slide animation */
-
-      transition: transform 0.3s ease;
-
-      /* Smooth scaling effect */
-
-      transform-origin: center center;
-
-      /* Keep scaling centered */
-
-      border-radius: inherit;
-
-      /* Ensure the image respects the parent container's border-radius */
-
-    }
-
-    /* Slide-in animation for images (from left to right) */
-
-    @keyframes slideInImage {
-
-      0% {
-
-        transform: translateX(-100%);
-
-        /* Start off-screen to the left */
-
-        opacity: 0;
-
-      }
-
-      100% {
-
-        transform: translateX(0);
-
-        /* End at normal position */
-
-        opacity: 1;
-
-      }
-
-    }
-
-    /* Optional: Add transition effects to make content smooth */
-
-    #img {
-
-      transition: transform 0.3s ease, opacity 0.3s ease;
-
-    }
-
-    /* Class to trigger visibility */
-
-    .tab-content.visible {
-
-      opacity: 1;
-
       transform: translateX(0);
-
-      /* Ensure content is visible */
-
-      overflow: hidden;
-
     }
+  }
 
-    /* Animation */
+  #content {
+  position: relative;
+  overflow: hidden; /* Prevent overflow when scaling or animating */
+  border-radius: 15px; /* Consistent border radius */
+  opacity: 0; /* Start invisible */
+  transform: translateX(10%); /* Start off-screen to the right */
+  animation: slideInContent 0.8s ease-out forwards; /* Slide animation */
+  transition: transform 0.3s ease, scale 0.3s ease; /* Smooth transition for both transform and scale */
+}
 
-    @keyframes scroll {
+#content:hover {
+  transform: translateX(0); /* Reset position */
+  scale: 1.05; /* Zoom in on hover */
+}
 
-      0% {
+@keyframes slideInContent {
+  0% {
+    opacity: 0;
+    transform: translateX(10%); /* Start off-screen */
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0); /* End in the normal position */
+  }
+}
 
-        transform: translateX(100%);
 
-      }
 
-      100% {
-
-        transform: translateX(-100%);
-
-      }
-
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
     }
-
-    .animate-scroll {
-
-      display: flex;
-
-      white-space: nowrap;
-
-      animation: scroll 20s linear infinite;
-
+    100% {
+      transform: translateX(-100%);
     }
+  }
 
-    .nav-link.active {
+  .animate-scroll {
+    display: flex;
+    white-space: nowrap;
+    animation: scroll 20s linear infinite;
+  }
+
+  /* Smooth Scrolling for the Entire Page */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .nav-link.active {
 
       color: orange;
 
     }
 
-    html {
+  .hidden {
+    display: none;
+  }
 
-      scroll-behavior: smooth;
 
-    }
 
   </style>
 
@@ -562,12 +341,11 @@
 
       <!-- Header Section -->
 
-      <h1
-        class="text-5xl md:text-6xl font-extrabold leading-tight text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 tracking-wide uppercase">
-
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight sm:leading-snug text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 tracking-wide uppercase">
         The All-in-One Tire Management Software Solution
-
       </h1>
+
+
 
       <!-- Description Section -->
 
@@ -747,27 +525,34 @@
     </center>
     <br><br>
     <!-- Tab Navigation -->
-    <div class="flex overflow-x-auto flex-nowrap justify-center gap-4 mb-8 border-b-2 border-gray-300" id="nav">
-      <button id="tire-shop-tab" class="tab-button active-tab">Tire Shop</button>
-      <button id="auto-repair-tab" class="tab-button">Auto Repair</button>
-      <button id="tire-wholesaler-tab" class="tab-button">Tire Wholesaler</button>
-      <button id="mobile-tire-tab" class="tab-button">Mobile Tire Shop</button>
-      <button id="online-tire-tab" class="tab-button">Online Tire Seller</button>
+    <div class="flex overflow-x-auto flex-nowrap justify-start gap-4 mb-8 border-b-2 border-gray-300 px-2 sm:px-4 lg:pl-16"
+      id="nav">
+      <button id="tire-shop-tab" class="tab-button active-tab whitespace-nowrap text-sm sm:text-base py-2 px-4" style="margin-left: 50px;">Tire
+        Shop</button>
+      <button id="auto-repair-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Auto Repair</button>
+      <button id="tire-wholesaler-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Tire
+        Wholesaler</button>
+      <button id="mobile-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Mobile Tire
+        Shop</button>
+      <button id="online-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Online Tire
+        Seller</button>
     </div>
+
+
     <!-- Content Sections -->
     <div id="tire-shop" class="tab-content">
       <center>
-        <h3 class="dynamic-heading text-2xl md:text-3xl lg:text-4xl"
+        <h3 class="dynamic-heading"
           data-text="Tire &nbsp; Shop &nbsp; Management &nbsp; Software."></h3>
       </center>
       <br><br>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
           <img src="tire.jpg" alt="Tire Shop"
-            class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300">
+            class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
         </div>
         <div
-          class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
           <p class="mt-6 text-lg md:text-xl text-gray-200">
             Whether you operate a single store or a hundred, Tire Base empowers you to monitor
             inventory, manage customers, and oversee purchases. Simplify billing and boost sales through
@@ -796,12 +581,12 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="auto_repair.png" alt="Auto Repair"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
 
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -841,12 +626,12 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="tire_warehouse.jpeg" alt="Tire Wholesaler"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id="img">
 
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -882,12 +667,11 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="mobile_tire.jpeg" alt="Mobile Tire Shop"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
 
           </div>
 
-          <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+          <div class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -926,12 +710,12 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="online_seller.jpg" alt="Online Tire Seller"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
 
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -1095,12 +879,12 @@
             About Us
           </h2>
           <p class="text-lg leading-relaxed text-gray-300">
-            With over 35 years of combined experience in the tire industry, our team at Tire Base brings a wealth
+            &ldquo;&nbsp;With over 35 years of combined experience in the tire industry, our team at Tire Base brings a wealth
             of knowledge and insight to the table. Our founders, investors, and key team members have spent decades
             running tire shops, managing wholesale warehouses, and overseeing auto repair stores. Tire Base isn’t
             just another software; it's born from our shared experiences and challenges in the tire world. Our
             heart is in the tire business, and we've crafted this program to make your daily operations smoother
-            and more efficient.
+            and more efficient.&nbsp;&rdquo;
           </p>
     
           <!-- Founder Info and Stats -->
@@ -1138,7 +922,7 @@
             </div>
           </div>
         </div>
-    
+        <br><br>
         <!-- Image Section -->
         <div class="md:w-1/2 flex justify-center">
           <div class="relative">
@@ -1430,100 +1214,80 @@
   </footer>
 
   <script>
-
     // Create sparkles dynamically
-
     const sparkleContainer = document.getElementById('sparkle-container');
-
     const sparkleCount = 80; // Number of sparkles
-
     const colors = ['#3B82F6', '#FB923C']; // Blue and orange colors
 
+    // Function to create a sparkle
     function createSparkle() {
-
       const sparkle = document.createElement('div');
-
       const size = Math.random() * 5 + 3; // Random size between 3px and 8px
-
       const glowSize = size * 3; // Glow size is proportional to the sparkle size
 
       sparkle.style.width = `${size}px`;
-
       sparkle.style.height = `${size}px`;
-
       sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-
       sparkle.style.borderRadius = '50%';
-
       sparkle.style.position = 'absolute';
-
       sparkle.style.top = `${Math.random() * 100}%`;
-
       sparkle.style.left = `${Math.random() * 100}%`;
-
       sparkle.style.boxShadow = `0 0 ${glowSize}px ${colors[Math.floor(Math.random() * colors.length)]}`;
-
       sparkle.style.opacity = 0;
-
-      sparkle.style.animation = `sparkle-shine 2s ease-in-out ${Math.random() * 2}s infinite`;
+      sparkle.style.animation = `sparkle-shine 3s ease-in-out ${Math.random() * 2}s infinite`;
 
       sparkleContainer.appendChild(sparkle);
 
-      // Remove the sparkle after its lifecycle to save memory
-
+      // Fade out the sparkle after 4 seconds to make it dim down smoothly
       setTimeout(() => {
+        sparkle.style.transition = 'opacity 3s ease-out'; // Smooth opacity transition
+        sparkle.style.opacity = 0; // Start fading out
+      }, 5000); // Start fading after 4 seconds
 
+      // Remove the sparkle after its lifecycle to save memory
+      setTimeout(() => {
         sparkle.remove();
-
-      }, 6000);
-
+      }, 5000);
     }
 
-    // Generate sparkles
-
+    // Generate sparkles every 300ms automatically after the page has loaded
     setInterval(() => {
-
       if (sparkleContainer.childElementCount < sparkleCount) {
-
         createSparkle();
-
       }
+    }, 200);
+      
+    // Manually create the first set of sparkles to start the animation immediately
+    for (let i = 0; i < sparkleCount; i++) {
+      createSparkle();  // Create initial sparkles on page load
+    }
 
+    // Generate sparkles every 300ms automatically after the page has loaded
+    setInterval(() => {
+      if (sparkleContainer.childElementCount < sparkleCount) {
+        createSparkle();
+      }
     }, 300);
 
     // Sparkle Animation Keyframes
-
     const style = document.createElement('style');
-
     style.innerHTML = `
-
-@keyframes sparkle-shine {
-
-0%, 100% {
-
-transform: scale(0);
-
-opacity: 0;
-
-}
-
-50% {
-
-transform: scale(1.5);
-
-opacity: 1;
-
-filter: blur(2px);
-
-}
-
-}
-
-`;
-
-    document.head.appendChild(style);
-
+      @keyframes sparkle-shine {
+        0%, 100% {
+          transform: scale(0);
+          opacity: 0;
+        }
+        50% {
+          transform: scale(1.5);
+          opacity: 1;
+          filter: blur(2px);
+        }
+      }
+    `;
+    document.head.appendChild(style); // Apply the animation immediately
   </script>
+
+
 
   <script>
 
@@ -1701,7 +1465,7 @@ filter: blur(2px);
         let current = '';
         sections.forEach(section => {
           const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 50) {
+          if (window.scrollY >= sectionTop - 20) {
             current = section.getAttribute('id');
           }
         });
@@ -1771,6 +1535,75 @@ filter: blur(2px);
       }
     });
   </script>
+  <script>
+      // Get all buttons
+        const tabs = document.querySelectorAll("#nav button");
+        const navContainer = document.getElementById("nav");
+
+        // Variable to track the last clicked tab index
+        let lastClickedIndex = -1;
+
+        // Function to scroll so the next and previous buttons are visible
+        function adjustScroll(tab) {
+          const tabRect = tab.getBoundingClientRect();
+          const containerRect = navContainer.getBoundingClientRect();
+          const tabIndex = Array.from(tabs).indexOf(tab); // Get the current tab's index
+
+          let scrollAmount = 0;
+
+          // Determine scroll direction (left or right)
+          if (lastClickedIndex !== -1) {
+            if (tabIndex > lastClickedIndex) {
+              // Moving to the right (next tab)
+              const nextButton = tab.nextElementSibling;
+              if (nextButton) {
+                const nextButtonRect = nextButton.getBoundingClientRect();
+                if (nextButtonRect.right > containerRect.right) {
+                  scrollAmount += nextButtonRect.right - containerRect.right + nextButton.offsetWidth / 2;
+                }
+              }
+            } else {
+              // Moving to the left (previous tab)
+              const prevButton = tab.previousElementSibling;
+              if (prevButton) {
+                const prevButtonRect = prevButton.getBoundingClientRect();
+                if (prevButtonRect.left < containerRect.left) {
+                  scrollAmount -= containerRect.left - prevButtonRect.left + prevButton.offsetWidth / 2;
+                }
+              }
+            }
+          }
+
+          // Scroll the container by the calculated amount
+          if (scrollAmount !== 0) {
+            navContainer.scrollBy({
+              left: scrollAmount,
+              behavior: "smooth",
+            });
+          }
+
+          // Update the last clicked index
+          lastClickedIndex = tabIndex;
+        }
+
+        // Add event listener to each button
+        tabs.forEach((tab) => {
+          tab.addEventListener("click", () => adjustScroll(tab));
+        });
+
+  </script>
+
+  <script>
+    // Select the burger button and mobile menu
+    const burgerButton = document.getElementById('burgerButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    // Add event listener to toggle the mobile menu visibility on click
+    burgerButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden'); // Toggles the 'hidden' class
+    });
+  </script>
+
 
   
 </body>
