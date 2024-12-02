@@ -1214,62 +1214,64 @@
   </footer>
 
   <script>
-    // Create sparkles dynamically
+    // Container and settings
     const sparkleContainer = document.getElementById('sparkle-container');
-    const sparkleCount = 80; // Number of sparkles
+    const sparkleCount = 50; // Reduced number of sparkles for better performance
     const colors = ['#3B82F6', '#FB923C']; // Blue and orange colors
 
-    // Function to create a sparkle
+    // Helper function to create a sparkle
     function createSparkle() {
       const sparkle = document.createElement('div');
-      const size = Math.random() * 5 + 3; // Random size between 3px and 8px
-      const glowSize = size * 3; // Glow size is proportional to the sparkle size
+      const size = Math.random() * 4 + 2; // Smaller sparkles (2px - 6px)
+      const glowSize = size * 2; // Reduced glow effect size
 
-      sparkle.style.width = `${size}px`;
-      sparkle.style.height = `${size}px`;
-      sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-      sparkle.style.borderRadius = '50%';
-      sparkle.style.position = 'absolute';
-      sparkle.style.top = `${Math.random() * 100}%`;
-      sparkle.style.left = `${Math.random() * 100}%`;
-      sparkle.style.boxShadow = `0 0 ${glowSize}px ${colors[Math.floor(Math.random() * colors.length)]}`;
-      sparkle.style.opacity = 0;
-      sparkle.style.animation = `sparkle-shine 3s ease-in-out ${Math.random() * 2}s infinite`;
+      // Style for the sparkle
+      sparkle.style.cssText = `
+        width: ${size}px;
+        height: ${size}px;
+        background-color: ${colors[Math.floor(Math.random() * colors.length)]};
+        border-radius: 50%;
+        position: absolute;
+        top: ${Math.random() * 100}%;
+        left: ${Math.random() * 100}%;
+        box-shadow: 0 0 ${glowSize}px ${colors[Math.floor(Math.random() * colors.length)]};
+        opacity: 0;
+        animation: sparkle-shine 2.5s ease-in-out ${Math.random() * 1}s infinite;
+        will-change: transform, opacity;
+      `;
 
+      // Append to container
       sparkleContainer.appendChild(sparkle);
 
-      // Fade out the sparkle after 4 seconds to make it dim down smoothly
-      setTimeout(() => {
-        sparkle.style.transition = 'opacity 3s ease-out'; // Smooth opacity transition
-        sparkle.style.opacity = 0; // Start fading out
-      }, 5000); // Start fading after 4 seconds
-
-      // Remove the sparkle after its lifecycle to save memory
-      setTimeout(() => {
-        sparkle.remove();
-      }, 5000);
+      // Remove sparkle after animation
+      setTimeout(() => sparkle.remove(), 3000);
     }
 
-    // Generate sparkles every 300ms automatically after the page has loaded
-    setInterval(() => {
+    // Generate sparkles at intervals
+    function generateSparkles() {
       if (sparkleContainer.childElementCount < sparkleCount) {
         createSparkle();
       }
-    }, 200);
-      
-    // Manually create the first set of sparkles to start the animation immediately
+    }
+
+    // Intersection Observer to pause/resume animations based on visibility
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          sparkleInterval = setInterval(generateSparkles, 300);
+        } else {
+          clearInterval(sparkleInterval);
+        }
+      });
+    });
+    observer.observe(sparkleContainer);
+
+    // Initial sparkles
     for (let i = 0; i < sparkleCount; i++) {
-      createSparkle();  // Create initial sparkles on page load
+      createSparkle();
     }
 
-    // Generate sparkles every 300ms automatically after the page has loaded
-    setInterval(() => {
-      if (sparkleContainer.childElementCount < sparkleCount) {
-        createSparkle();
-      }
-    }, 300);
-
-    // Sparkle Animation Keyframes
+    // Animation keyframes
     const style = document.createElement('style');
     style.innerHTML = `
       @keyframes sparkle-shine {
@@ -1278,14 +1280,15 @@
           opacity: 0;
         }
         50% {
-          transform: scale(1.5);
+          transform: scale(1.3);
           opacity: 1;
-          filter: blur(2px);
+          filter: blur(1px);
         }
       }
     `;
-    document.head.appendChild(style); // Apply the animation immediately
+    document.head.appendChild(style);
   </script>
+
 
 
 
