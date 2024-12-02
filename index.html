@@ -765,13 +765,14 @@
 
       <!-- Tab Navigation -->
 
-      <div class="flex flex-wrap justify-center gap-x-4 mb-8 border-b-2 border-gray-300" id="nav">
+      <div class="flex flex-nowrap justify-center gap-4 mb-8 border-b-2 border-gray-300" id="nav">
         <button id="tire-shop-tab" class="tab-button active-tab">Tire Shop</button>
         <button id="auto-repair-tab" class="tab-button">Auto Repair</button>
         <button id="tire-wholesaler-tab" class="tab-button">Tire Wholesaler</button>
         <button id="mobile-tire-tab" class="tab-button">Mobile Tire Shop</button>
         <button id="online-tire-tab" class="tab-button">Online Tire Seller</button>
       </div>
+
 
 
       <!-- Content Sections -->
@@ -1738,6 +1739,63 @@ filter: blur(2px);
       });
 
   </script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const animateCount = (id, target, duration) => {
+        const element = document.getElementById(id);
+        let start = 0;
+        const step = Math.max(Math.ceil(target / (duration / 10)), 1);
+
+        const interval = setInterval(() => {
+          start += step;
+          if (start >= target) {
+            start = target;
+            clearInterval(interval);
+          }
+          element.textContent = start.toLocaleString();
+        }, 10);
+      };
+
+      const animateDecimalCount = (id, target, duration) => {
+        const element = document.getElementById(id);
+        let start = 0;
+        const step = target / (duration / 10);
+
+        const interval = setInterval(() => {
+          start += step;
+          if (start >= target) {
+            start = target;
+            clearInterval(interval);
+          }
+          element.textContent = start.toFixed(1);
+        }, 10);
+      };
+
+      const observerCallback = (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            animateCount("count-estimates", 10000, 2000);
+            animateCount("count-catalog", 80000, 2500);
+            animateDecimalCount("count-uptime", 99.9, 1500);
+            observer.unobserve(entry.target); // Stop observing after triggering
+          }
+        });
+      };
+
+      const observerOptions = {
+        root: null,
+        threshold: 0.1, // Trigger when 10% of the section is visible
+      };
+
+      const observer = new IntersectionObserver(observerCallback, observerOptions);
+      const targetSection = document.getElementById("counts-section");
+      if (targetSection) {
+        observer.observe(targetSection);
+      }
+    });
+  </script>
+
   
 </body>
 
