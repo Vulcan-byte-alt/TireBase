@@ -14,6 +14,8 @@
   <title>Tirebase | Home</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Söhne&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
   <link rel="preload" href="Stripe-Logo.png" as="image">
   <link rel="preload" href="atd.png" as="image">
@@ -468,63 +470,6 @@
 
     }
 
-    /* Initial state (before they are in view) */
-
-    #features,
-
-    #solutions,
-
-    #support,
-
-    #about,
-
-    #partners {
-
-      opacity: 0;
-
-      /* Start invisible */
-
-      transform: translateY(100px);
-
-      /* Position them off-screen initially */
-
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-      position: relative;
-
-      /* Keep sections in their place */
-
-    }
-
-    /* When the section comes into view */
-
-    #features.in-view,
-
-    #solutions.in-view,
-
-    #support.in-view,
-
-    #about.in-view,
-
-    #partners.in-view {
-
-      opacity: 1;
-
-      /* Fade in */
-
-      transform: translateY(0);
-
-      /* Slide in to original position */
-
-      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-
-      transition-delay: 0.1s;
-
-    }
-
-    #partners.in-view {
-        will-change: opacity, transform;
-    }
   </style>
 
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -1752,96 +1697,24 @@ filter: blur(2px);
   </script>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const animateCount = (id, target, duration) => {
-        const element = document.getElementById(id);
-        let start = 0;
-        const step = Math.max(Math.ceil(target / (duration / 10)), 1);
+    gsap.registerPlugin(ScrollTrigger);
 
-        const interval = setInterval(() => {
-          start += step;
-          if (start >= target) {
-            start = target;
-            clearInterval(interval);
+      gsap.utils.toArray('#features, #solutions, #support, #about').forEach(section => {
+        gsap.fromTo(section,
+          { opacity: 0, y: 50 },
+          {
+            opacity: 1, y: 0, duration: 0.8, ease: "power2.out",
+            scrollTrigger: {
+              trigger: section,
+              start: "top 90%",
+              toggleActions: "play none none none",
+              refreshPriority: 1
+            }
           }
-          element.textContent = start.toLocaleString();
-        }, 10);
-      };
-
-      const animateDecimalCount = (id, target, duration) => {
-        const element = document.getElementById(id);
-        let start = 0;
-        const step = target / (duration / 10);
-
-        const interval = setInterval(() => {
-          start += step;
-          if (start >= target) {
-            start = target;
-            clearInterval(interval);
-          }
-          element.textContent = start.toFixed(1);
-        }, 10);
-      };
-
-      const observerCallback = (entries, observer) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            animateCount("count-estimates", 10000, 2000);
-            animateCount("count-catalog", 80000, 2500);
-            animateDecimalCount("count-uptime", 99.9, 1500);
-            observer.unobserve(entry.target); // Stop observing after triggering
-          }
-        });
-      };
-
-      const observerOptions = {
-        root: null,
-        threshold: 0.1, // Trigger when 10% of the section is visible
-      };
-
-      const observer = new IntersectionObserver(observerCallback, observerOptions);
-      const targetSection = document.getElementById("counts-section");
-      if (targetSection) {
-        observer.observe(targetSection);
-      }
-    });
-  </script>
-
-
-  <script>
-
-    document.addEventListener("DOMContentLoaded", function () {
-
-      // Target sections
-
-      const sections = document.querySelectorAll('#features, #solutions, #support, #about, #partners');
-
-      // Set up the intersection observer to watch for when sections enter the viewport
-
-      const observer = new IntersectionObserver(entries => {
-
-        entries.forEach(entry => {
-
-          if (entry.isIntersecting) {
-
-            // Add the 'in-view' class when the section is in view
-
-            entry.target.classList.add('in-view');
-
-          }
-
-        });
-
-      }, { threshold: 0.09 }); // Trigger when 50% of the section is in view
-
-      // Observe each section
-
-      sections.forEach(section => observer.observe(section));
-
-    });
+        );
+      });
 
   </script>
-
   
   <script>
     const sections = document.querySelectorAll('section');
