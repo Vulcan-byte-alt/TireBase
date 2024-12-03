@@ -370,7 +370,7 @@
 
     <!-- Sparkle Container -->
 
-    <canvas id="sparkle-container" class="absolute inset-0 pointer-events-none"></canvas>
+    <div id="sparkle-container" class="absolute inset-0 pointer-events-none"></div>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center relative z-10">
 
@@ -1265,98 +1265,102 @@
   </footer>
 
   
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        var canvas = document.getElementById('sparkle-container');
-        var ctx;
+  <script>
 
-        if (canvas) {
-          ctx = canvas.getContext('2d');
-          canvas.width = window.innerWidth;
-          canvas.height = window.innerHeight;
+    // Create sparkles dynamically
 
-          var particlesArray = [];
-          const colors = ['#3B82F6', '#FB923C', '#FACC15', '#307EDE']; // Blue, Orange, Yellow, Red colors
+    const sparkleContainer = document.getElementById('sparkle-container');
 
-          // Particle constructor to create particles with smooth glowing behavior
-          function Particle() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 2; // Smaller sizes for a more subtle effect
-            this.color = colors[Math.floor(Math.random() * colors.length)];
-            this.opacity = Math.random() * 0.5 + 0.3; // Initial opacity between 0.3 and 0.8
-            this.opacityChange = Math.random() * 0.005 + 0.002; // Slower opacity change to reduce flicker
-            this.blur = Math.random() * 10 + 5; // Random initial blur size
-            this.blurChange = Math.random() * 0.03 + 0.02; // Slower blur fluctuation for smooth glow
-          }
+    const sparkleCount = 160; // Number of sparkles
 
-          // Update the particle's properties to create a smooth glow effect
-          Particle.prototype.update = function () {
-            // Adjust opacity for smooth glow up and down
-            this.opacity += this.opacityChange;
-            if (this.opacity >= 1 || this.opacity <= 0) {
-              this.opacityChange = -this.opacityChange;
-            }
+    const colors = ['#3B82F6', '#FB923C']; // Blue and orange colors
 
-            // Adjust blur size to create a flowing effect
-            this.blur += this.blurChange;
-            if (this.blur >= 20 || this.blur <= 5) {
-              this.blurChange = -this.blurChange;
-            }
-          };
+    function createSparkle() {
 
-          // Draw the particle with dynamic glow and smooth transition
-          Particle.prototype.draw = function () {
-            ctx.fillStyle = this.color;
-            ctx.globalAlpha = this.opacity; // Set particle's current opacity
-            ctx.shadowBlur = this.blur; // Dynamic blur for smooth glow effect
-            ctx.shadowColor = this.color; // Glow color matches particle color
+      const sparkle = document.createElement('div');
 
-            ctx.beginPath();
-            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-            ctx.closePath();
-            ctx.fill();
+      const size = Math.random() * 5 + 3; // Random size between 3px and 8px
 
-            // Reset shadow blur and global alpha to avoid affecting other particles
-            ctx.shadowBlur = 0;
-            ctx.globalAlpha = 1;
-          };
+      const glowSize = size * 3; // Glow size is proportional to the sparkle size
 
-          // Create an array of particles to animate
-          function createParticles() {
-            particlesArray = [];
-            for (var i = 0; i < 50; i++) { // Number of particles
-              particlesArray.push(new Particle());
-            }
-          }
+      sparkle.style.width = `${size}px`;
 
-          // Main animation loop
-          function animateParticles() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before each frame
+      sparkle.style.height = `${size}px`;
 
-            for (var i = 0; i < particlesArray.length; i++) {
-              particlesArray[i].update(); // Update each particle's properties
-              particlesArray[i].draw();   // Draw the particle on canvas
-            }
+      sparkle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
 
-            requestAnimationFrame(animateParticles); // Request the next animation frame
-          }
+      sparkle.style.borderRadius = '50%';
 
-          // Adjust canvas size on window resize
-          window.addEventListener('resize', function () {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            createParticles(); // Recreate particles when resizing
-          });
+      sparkle.style.position = 'absolute';
 
-          // Initial particle creation and animation start
-          createParticles();
-          animateParticles();
-        }
-      });
-    </script>
+      sparkle.style.top = `${Math.random() * 100}%`;
 
+      sparkle.style.left = `${Math.random() * 100}%`;
 
+      sparkle.style.boxShadow = `0 0 ${glowSize}px ${colors[Math.floor(Math.random() * colors.length)]}`;
+
+      sparkle.style.opacity = 0;
+
+      sparkle.style.animation = `sparkle-shine 2s ease-in-out ${Math.random() * 2}s infinite`;
+
+      sparkleContainer.appendChild(sparkle);
+
+      // Remove the sparkle after its lifecycle to save memory
+
+      setTimeout(() => {
+
+        sparkle.remove();
+
+      }, 6000);
+
+    }
+
+    // Generate sparkles
+
+    setInterval(() => {
+
+      if (sparkleContainer.childElementCount < sparkleCount) {
+
+        createSparkle();
+
+      }
+
+    }, 300);
+
+    // Sparkle Animation Keyframes
+
+    const style = document.createElement('style');
+
+    style.innerHTML = `
+  
+  @keyframes sparkle-shine {
+  
+  0%, 100% {
+  
+  transform: scale(0);
+  
+  opacity: 0;
+  
+  }
+  
+  50% {
+  
+  transform: scale(1.5);
+  
+  opacity: 1;
+  
+  filter: blur(2px);
+  
+  }
+  
+  }
+  
+  `;
+
+    document.head.appendChild(style);
+
+  </script>
+    
   <script>
 
     tailwind.config = {
