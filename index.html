@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <meta name="description" content="Tirebase - Empower your software development with efficient tools and features">
-  
+
 
   <title>Tirebase | Home</title>
 
@@ -28,227 +28,262 @@
   <style>
     /* Hoverable Class */
 
-      /* Hoverable Class */
-  .hoverable {
-    transition: all 0.3s ease;
-  }
+    /* Hoverable Class */
+    .hoverable {
+      transition: all 0.3s ease;
+    }
 
-  /* Content Box Styling */
-  .content-box {
-    background-color: rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
-    padding: 24px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(8px);
-    transition: transform 0.3s ease, border 0.3s ease;
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden; /* Prevents image overflow */
-  }
+    /* Content Box Styling */
+    .content-box {
+      background-color: rgba(255, 255, 255, 0.6);
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      transition: transform 0.3s ease, border 0.3s ease;
+      border: 2px solid transparent;
+      position: relative;
+      overflow: hidden;
+      /* Prevents image overflow */
+    }
 
-  /* Hover Effects */
-  .content-box:hover {
-    transform: scale(1.03); /* Slightly reduced scaling */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
-    border: 4px solid #3182ce;
-    transform-origin: center center; /* Keeps the element centered while zooming */
-  }
+    /* Hover Effects */
+    .content-box:hover {
+      transform: scale(1.03);
+      /* Slightly reduced scaling */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      /* Subtle shadow for depth */
+      border: 4px solid #3182ce;
+      transform-origin: center center;
+      /* Keeps the element centered while zooming */
+    }
 
-  /* Image Placeholder Styling */
-  .image-placeholder {
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    border: 2px solid #ddd;
-    padding: 20px;
-    text-align: center;
-    margin-bottom: 16px;
-    position: relative;
-  }
+    /* Image Placeholder Styling */
+    .image-placeholder {
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      border: 2px solid #ddd;
+      padding: 20px;
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
+    }
 
-  .image-placeholder span {
-    color: #999;
-    font-size: 14px;
-    font-weight: bold;
-  }
+    .image-placeholder span {
+      color: #999;
+      font-size: 14px;
+      font-weight: bold;
+    }
 
-  /* Additional Content Styles */
-  .content-box h3 {
-    margin-top: 16px;
-    font-size: 1.25rem;
-  }
+    /* Additional Content Styles */
+    .content-box h3 {
+      margin-top: 16px;
+      font-size: 1.25rem;
+    }
 
-  .content-box p {
-    margin-top: 8px;
-    font-size: 1rem;
-    color: #4a4a4a;
-  }
+    .content-box p {
+      margin-top: 8px;
+      font-size: 1rem;
+      color: #4a4a4a;
+    }
 
-  .content-box a {
-    margin-top: 16px;
-    display: inline-block;
-    font-weight: bold;
-  }
+    .content-box a {
+      margin-top: 16px;
+      display: inline-block;
+      font-weight: bold;
+    }
 
-  .content-box a:hover {
-    color: #2b6cb0;
-  }
+    .content-box a:hover {
+      color: #2b6cb0;
+    }
 
-  /* Tab Button Styling */
-  .tab-button {
-    font-family: 'Söhne', sans-serif;
-    padding: 0.75rem 1.5rem;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #bbafaf;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
-    transition: all 0.3s ease;
-  }
+    /* Tab Button Styling */
+    .tab-button {
+      font-family: 'Söhne', sans-serif;
+      padding: 0.75rem 1.5rem;
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #bbafaf;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      border: none;
+      outline: none;
+      background: none;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
 
-  .tab-button:hover {
-    color: orange;
-  }
+    .tab-button:hover {
+      color: orange;
+    }
 
-  .active-tab {
-    color: #ffa500;
-    border-bottom: 4px solid #ffa500;
-    background: rgba(255, 165, 0, 0.1); /* Subtle orange background */
-  }
+    .active-tab {
+      color: #ffa500;
+      border-bottom: 4px solid #ffa500;
+      background: rgba(255, 165, 0, 0.1);
+      /* Subtle orange background */
+    }
 
-  /* Tab Navigation Container */
-  #nav {
-    display: flex;
-    overflow-x: auto; /* Allow horizontal scrolling */
-    scroll-snap-type: x mandatory; /* Enable snapping */
-    scroll-behavior: smooth; /* Smooth scrolling */
-    padding-bottom: 4px;
-    height: 50px;
-  }
+    #nav {
+      display: flex;
+      overflow-x: auto;
+      /* Allow horizontal scrolling */
+      scroll-snap-type: x mandatory;
+      /* Enable snapping */
+      scroll-behavior: smooth;
+      /* Smooth scrolling */
+      padding-bottom: 4px;
+      height: 50px;
+    }
 
-  .tab-button {
-    scroll-snap-align: start; /* Ensure proper alignment */
-  }
+    .scrollbar-hidden {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
 
-  /* Tab Content Styling */
-  .tab-content {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-  }
+    .scrollbar-hidden::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, and Edge */
+    }
 
-  .tab-content:not(.hidden) {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    /* Ensure buttons align properly in snap scrolling */
+    .tab-button {
+      scroll-snap-align: start;
+      /* Ensure proper alignment */
+    }
 
-  /* Dynamic Heading Animation */
-  .word {
-    display: inline-block;
-    opacity: 0;
-    transform: translateY(10px);
-    font-size: 2.25rem; /* Tailwind's text-4xl */
-    font-weight: 700;
-    background: linear-gradient(90deg, #f97416c5, #3b83f6bc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: opacity 0.2s ease, transform 0.2s ease;
-    margin-right: 0.25rem; /* Add space between words */
-  }
+    /* Tab Content Styling */
+    .tab-content {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.3s ease, transform 0.3s ease;
+    }
 
-  .word.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    .tab-content:not(.hidden) {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-  .dynamic-heading {
-    white-space: normal;
-    line-height: 1.5; /* Improve readability */
-  }
 
-  /* Image Animation */
-  #img {
-    opacity: 0;
-    transform: translateX(-30px);
-    animation: fadeInImage 0.8s ease-out forwards;
-    transform-origin: center center;
-    border-radius: inherit;
-  }
+    /* Dynamic Heading Animation */
+    .word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(10px);
+      font-size: 2.25rem;
+      /* Tailwind's text-4xl */
+      font-weight: 700;
+      background: linear-gradient(90deg, #f97416c5, #3b83f6bc);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: opacity 0.2s ease, transform 0.2s ease;
+      margin-right: 0.25rem;
+      /* Add space between words */
+    }
 
-  @keyframes fadeInImage {
-    0% {
+    .word.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .dynamic-heading {
+      white-space: normal;
+      line-height: 1.5;
+      /* Improve readability */
+    }
+
+    /* Image Animation */
+    #img {
       opacity: 0;
       transform: translateX(-30px);
+      animation: fadeInImage 0.8s ease-out forwards;
+      transform-origin: center center;
+      border-radius: inherit;
     }
-    100% {
-      opacity: 1;
+
+    @keyframes fadeInImage {
+      0% {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    #content {
+      position: relative;
+      overflow: hidden;
+      /* Prevent overflow when scaling or animating */
+      border-radius: 15px;
+      /* Consistent border radius */
+      opacity: 0;
+      /* Start invisible */
+      transform: translateX(10%);
+      /* Start off-screen to the right */
+      animation: slideInContent 0.8s ease-out forwards;
+      /* Slide animation */
+      transition: transform 0.3s ease, scale 0.3s ease;
+      /* Smooth transition for both transform and scale */
+    }
+
+    #content:hover {
       transform: translateX(0);
+      /* Reset position */
+      scale: 1.05;
+      /* Zoom in on hover */
     }
-  }
 
-  #content {
-  position: relative;
-  overflow: hidden; /* Prevent overflow when scaling or animating */
-  border-radius: 15px; /* Consistent border radius */
-  opacity: 0; /* Start invisible */
-  transform: translateX(10%); /* Start off-screen to the right */
-  animation: slideInContent 0.8s ease-out forwards; /* Slide animation */
-  transition: transform 0.3s ease, scale 0.3s ease; /* Smooth transition for both transform and scale */
-}
+    @keyframes slideInContent {
+      0% {
+        opacity: 0;
+        transform: translateX(10%);
+        /* Start off-screen */
+      }
 
-#content:hover {
-  transform: translateX(0); /* Reset position */
-  scale: 1.05; /* Zoom in on hover */
-}
-
-@keyframes slideInContent {
-  0% {
-    opacity: 0;
-    transform: translateX(10%); /* Start off-screen */
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0); /* End in the normal position */
-  }
-}
-
-
-
-  @keyframes scroll {
-    0% {
-      transform: translateX(100%);
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+        /* End in the normal position */
+      }
     }
-    100% {
-      transform: translateX(-100%);
+
+
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
     }
-  }
 
-  .animate-scroll {
-    display: flex;
-    white-space: nowrap;
-    animation: scroll 20s linear infinite;
-  }
+    .animate-scroll {
+      display: flex;
+      white-space: nowrap;
+      animation: scroll 20s linear infinite;
+    }
 
-  /* Smooth Scrolling for the Entire Page */
-  html {
-    scroll-behavior: smooth;
-  }
+    /* Smooth Scrolling for the Entire Page */
+    html {
+      scroll-behavior: smooth;
+    }
 
-  .nav-link.active {
+    .nav-link.active {
 
       color: orange;
 
     }
 
-  .hidden {
-    display: none;
-  }
-
-
-
+    .hidden {
+      display: none;
+    }
   </style>
 
   <link rel="icon" href="favicon.png" type="image/x-icon">
@@ -335,13 +370,14 @@
 
     <!-- Sparkle Container -->
 
-    <div id="sparkle-container" class="absolute inset-0 pointer-events-none"></div>
+    <canvas id="sparkle-container" class="absolute inset-0 pointer-events-none"></canvas>
 
     <div class="max-w-7xl mx-auto px-6 lg:px-8 flex flex-col items-center relative z-10">
 
       <!-- Header Section -->
 
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight sm:leading-snug text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 tracking-wide uppercase">
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight sm:leading-snug text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-orange-400 to-blue-500 tracking-wide uppercase">
         The All-in-One Tire Management Software Solution
       </h1>
 
@@ -506,64 +542,67 @@
 
   <!-- Solutions Section -->
 
-<section id="solutions" class="py-16 bg-gradient-to-r from-[#ad6610] via-black to-[#ad6610] text-white">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <center>
-      <h3 class="text-lg font-semibold text-orange-700 mb-2">REAL SOFTWARE SOLUTIONS</h3>
-    </center>
-    <br>
-    <h2
-      class="text-4xl md:text-5xl font-extrabold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
-      Software for all Tire Businesses.
-    </h2>
-    <center>
-      <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl">
-        No matter your role in the tire industry, we have a tailored solution just for you. Elevate your
-        operations with our dynamic tire business software, designed to maximize efficiency and bolster your
-        bottom line.
-      </p>
-    </center>
-    <br><br>
-    <!-- Tab Navigation -->
-    <div class="flex overflow-x-auto flex-nowrap justify-start gap-4 mb-8 border-b-2 border-gray-300 px-2 sm:px-4 lg:pl-16"
-      id="nav">
-      <button id="tire-shop-tab" class="tab-button active-tab whitespace-nowrap text-sm sm:text-base py-2 px-4" style="margin-left: 50px;">Tire
-        Shop</button>
-      <button id="auto-repair-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Auto Repair</button>
-      <button id="tire-wholesaler-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Tire
-        Wholesaler</button>
-      <button id="mobile-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Mobile Tire
-        Shop</button>
-      <button id="online-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Online Tire
-        Seller</button>
-    </div>
-
-
-    <!-- Content Sections -->
-    <div id="tire-shop" class="tab-content">
+  <section id="solutions" class="py-16 bg-gradient-to-r from-[#ad6610] via-black to-[#ad6610] text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <center>
-        <h3 class="dynamic-heading"
-          data-text="Tire &nbsp; Shop &nbsp; Management &nbsp; Software."></h3>
+        <h3 class="text-lg font-semibold text-orange-700 mb-2">REAL SOFTWARE SOLUTIONS</h3>
+      </center>
+      <br>
+      <h2
+        class="text-4xl md:text-5xl font-extrabold text-center mb-10 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-400">
+        Software for all Tire Businesses.
+      </h2>
+      <center>
+        <p class="mt-6 text-lg md:text-xl text-gray-200 max-w-3xl">
+          No matter your role in the tire industry, we have a tailored solution just for you. Elevate your
+          operations with our dynamic tire business software, designed to maximize efficiency and bolster your
+          bottom line.
+        </p>
       </center>
       <br><br>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
-          <img src="tire.jpg" alt="Tire Shop"
-            class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
-        </div>
-        <div
-          class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
-          <p class="mt-6 text-lg md:text-xl text-gray-200">
-            Whether you operate a single store or a hundred, Tire Base empowers you to monitor
-            inventory, manage customers, and oversee purchases. Simplify billing and boost sales through
-            our digital vehicle inspections.
-          </p>
-          <a href="#"
-            class="mt-6 inline-block text-white bg-orange-400 hover:bg-blue-400 rounded-full py-2 px-6 font-semibold transition-all duration-300">Watch
-            Demo</a>
+      <!-- Tab Navigation -->
+      <div
+        class="flex overflow-x-auto flex-nowrap justify-start gap-4 mb-8 border-b-2 border-gray-300 px-2 sm:px-4 lg:pl-16 scrollbar-hidden"
+        id="nav">
+        <button id="tire-shop-tab" class="tab-button active-tab whitespace-nowrap text-sm sm:text-base py-2 px-4"
+          style="margin-left: 50px;">Tire
+          Shop</button>
+        <button id="auto-repair-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Auto
+          Repair</button>
+        <button id="tire-wholesaler-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Tire
+          Wholesaler</button>
+        <button id="mobile-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Mobile Tire
+          Shop</button>
+        <button id="online-tire-tab" class="tab-button whitespace-nowrap text-sm sm:text-base py-2 px-4">Online Tire
+          Seller</button>
+      </div>
+
+
+      <!-- Content Sections -->
+      <div id="tire-shop" class="tab-content">
+        <center>
+          <h3 class="dynamic-heading" data-text="Tire &nbsp; Shop &nbsp; Management &nbsp; Software."></h3>
+        </center>
+        <br><br>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
+            <img src="tire.jpg" alt="Tire Shop"
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id="img">
+          </div>
+          <div
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            id="content">
+            <p class="mt-6 text-lg md:text-xl text-gray-200">
+              Whether you operate a single store or a hundred, Tire Base empowers you to monitor
+              inventory, manage customers, and oversee purchases. Simplify billing and boost sales through
+              our digital vehicle inspections.
+            </p>
+            <a href="#"
+              class="mt-6 inline-block text-white bg-orange-400 hover:bg-blue-400 rounded-full py-2 px-6 font-semibold transition-all duration-300">Watch
+              Demo</a>
+          </div>
         </div>
       </div>
-    </div>
 
       <div id="auto-repair" class="tab-content hidden">
 
@@ -581,12 +620,13 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="auto_repair.png" alt="Auto Repair"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id="img">
 
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            id="content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -631,7 +671,8 @@
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            id="content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -667,11 +708,13 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="mobile_tire.jpeg" alt="Mobile Tire Shop"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id="img">
 
           </div>
 
-          <div class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
+          <div
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            id="content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -710,12 +753,13 @@
           <div class="relative rounded-lg overflow-hidden group hover:scale-105 transition-transform duration-300">
 
             <img src="online_seller.jpg" alt="Online Tire Seller"
-              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id = "img">
+              class="object-cover w-full h-72 group-hover:scale-110 transition-transform duration-300" id="img">
 
           </div>
 
           <div
-            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300" id = "content">
+            class="p-6 bg-gray-900 bg-opacity-80 rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            id="content">
 
             <p class="mt-6 text-lg md:text-xl text-gray-200">
 
@@ -859,79 +903,80 @@
 
     </div>
 
-    </section>
+  </section>
 
-    <section id="about" class="relative bg-cover bg-center bg-no-repeat text-white py-16"
-      style="background-image: url('about.avif');">
-    
-      <!-- Dark Overlay -->
-      <div class="absolute inset-0 bg-black bg-opacity-90"></div>
-    
-      <!-- Main Content -->
-      <div class="relative container mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center md:space-x-12">
-    
-        <!-- Content Section -->
-        <div class="md:w-1/2 space-y-6">
-          <!-- Section Title -->
-          <h3 class="text-xl font-semibold text-blue-400">Who We Are</h3>
-          <h2
-            class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-900 mb-4">
-            About Us
-          </h2>
-          <p class="text-lg leading-relaxed text-gray-300">
-            &ldquo;&nbsp;With over 35 years of combined experience in the tire industry, our team at Tire Base brings a wealth
-            of knowledge and insight to the table. Our founders, investors, and key team members have spent decades
-            running tire shops, managing wholesale warehouses, and overseeing auto repair stores. Tire Base isn’t
-            just another software; it's born from our shared experiences and challenges in the tire world. Our
-            heart is in the tire business, and we've crafted this program to make your daily operations smoother
-            and more efficient.&nbsp;&rdquo;
+  <section id="about" class="relative bg-cover bg-center bg-no-repeat text-white py-16"
+    style="background-image: url('about.avif');">
+
+    <!-- Dark Overlay -->
+    <div class="absolute inset-0 bg-black bg-opacity-90"></div>
+
+    <!-- Main Content -->
+    <div class="relative container mx-auto px-6 md:px-12 lg:px-20 flex flex-col md:flex-row items-center md:space-x-12">
+
+      <!-- Content Section -->
+      <div class="md:w-1/2 space-y-6">
+        <!-- Section Title -->
+        <h3 class="text-xl font-semibold text-blue-400">Who We Are</h3>
+        <h2
+          class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-900 mb-4">
+          About Us
+        </h2>
+        <p class="text-lg leading-relaxed text-gray-300">
+          &ldquo;&nbsp;With over 35 years of combined experience in the tire industry, our team at Tire Base brings a
+          wealth
+          of knowledge and insight to the table. Our founders, investors, and key team members have spent decades
+          running tire shops, managing wholesale warehouses, and overseeing auto repair stores. Tire Base isn’t
+          just another software; it's born from our shared experiences and challenges in the tire world. Our
+          heart is in the tire business, and we've crafted this program to make your daily operations smoother
+          and more efficient.&nbsp;&rdquo;
+        </p>
+
+        <!-- Founder Info and Stats -->
+        <div id="counts-section" class="space-y-6">
+          <p class="text-lg font-bold text-white">
+            <span>Fernando Herrera</span><br />
+            <span>Founder | CEO Tire Base Inc</span>
           </p>
-    
-          <!-- Founder Info and Stats -->
-          <div id="counts-section" class="space-y-6">
-            <p class="text-lg font-bold text-white">
-              <span>Fernando Herrera</span><br />
-              <span>Founder | CEO Tire Base Inc</span>
-            </p>
-            <div class="space-y-6">
-              <div class="flex items-center">
-                <h4
-                  class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
-                  <span id="count-estimates">0</span>+
-                </h4>
-                <p class="text-sm text-gray-300 uppercase tracking-wide">
-                  Estimates, Work Orders, and Invoices Generated
-                </p>
-              </div>
-              <div class="flex items-center">
-                <h4
-                  class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
-                  <span id="count-catalog">0</span>+
-                </h4>
-                <p class="text-sm text-gray-300 uppercase tracking-wide">
-                  Wheels and Tires Catalog with Images, Specs, and More!
-                </p>
-              </div>
-              <div class="flex items-center">
-                <h4
-                  class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
-                  <span id="count-uptime">0</span>%
-                </h4>
-                <p class="text-sm text-gray-300 uppercase tracking-wide">Server Up Time</p>
-              </div>
+          <div class="space-y-6">
+            <div class="flex items-center">
+              <h4
+                class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
+                <span id="count-estimates">0</span>+
+              </h4>
+              <p class="text-sm text-gray-300 uppercase tracking-wide">
+                Estimates, Work Orders, and Invoices Generated
+              </p>
+            </div>
+            <div class="flex items-center">
+              <h4
+                class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
+                <span id="count-catalog">0</span>+
+              </h4>
+              <p class="text-sm text-gray-300 uppercase tracking-wide">
+                Wheels and Tires Catalog with Images, Specs, and More!
+              </p>
+            </div>
+            <div class="flex items-center">
+              <h4
+                class="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-800 to-blue-900 mr-2">
+                <span id="count-uptime">0</span>%
+              </h4>
+              <p class="text-sm text-gray-300 uppercase tracking-wide">Server Up Time</p>
             </div>
           </div>
         </div>
-        <br><br>
-        <!-- Image Section -->
-        <div class="md:w-1/2 flex justify-center">
-          <div class="relative">
-            <img src="ceo.avif" alt="Fernando Herrera, CEO"
-              class="rounded-lg shadow-lg border-4 border-[#a8b1c2] transform hover:scale-105 transition duration-300 max-w-full" />
-          </div>
+      </div>
+      <br><br>
+      <!-- Image Section -->
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative">
+          <img src="ceo.avif" alt="Fernando Herrera, CEO"
+            class="rounded-lg shadow-lg border-4 border-[#a8b1c2] transform hover:scale-105 transition duration-300 max-w-full" />
         </div>
       </div>
-    </section>
+    </div>
+  </section>
 
 
   <section id="partners" class="relative py-16 text-white overflow-hidden" style="background-color: black;">
@@ -989,42 +1034,48 @@
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="6b81556a7707d258bdc9bc47787a096e.png" alt="Intuit"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="1-PartsTech-Logo-PNG-2021.png" alt="Parts Tech"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="atd.png" alt="ATD"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="Stripe-Logo.png" alt="Stripe"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="oreilly-auto-parts-logo.png" alt="O'Reilly Auto Parts"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
           <div class="w-24 sm:w-32 md:w-40 h-24 sm:h-32 md:h-40 flex justify-center items-center">
 
             <img src="AutoZone-Emblem-700x394.png" alt="AutoZone"
-              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300" loading="lazy">
+              class="max-w-full max-h-full object-contain grayscale opacity-90 hover:opacity-100 hover:grayscale-0 transition-opacity duration-300"
+              loading="lazy">
 
           </div>
 
@@ -1213,83 +1264,97 @@
 
   </footer>
 
-  <script>
-    // Container and settings
-    const sparkleContainer = document.getElementById('sparkle-container');
-    const sparkleCount = 50; // Reduced number of sparkles for better performance
-    const colors = ['#3B82F6', '#FB923C']; // Blue and orange colors
+  
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var canvas = document.getElementById('sparkle-container');
+        var ctx;
 
-    // Helper function to create a sparkle
-    function createSparkle() {
-      const sparkle = document.createElement('div');
-      const size = Math.random() * 4 + 2; // Smaller sparkles (2px - 6px)
-      const glowSize = size * 2; // Reduced glow effect size
+        if (canvas) {
+          ctx = canvas.getContext('2d');
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
 
-      // Style for the sparkle
-      sparkle.style.cssText = `
-        width: ${size}px;
-        height: ${size}px;
-        background-color: ${colors[Math.floor(Math.random() * colors.length)]};
-        border-radius: 50%;
-        position: absolute;
-        top: ${Math.random() * 100}%;
-        left: ${Math.random() * 100}%;
-        box-shadow: 0 0 ${glowSize}px ${colors[Math.floor(Math.random() * colors.length)]};
-        opacity: 0;
-        animation: sparkle-shine 2.5s ease-in-out ${Math.random() * 1}s infinite;
-        will-change: transform, opacity;
-      `;
+          var particlesArray = [];
+          const colors = ['#3B82F6', '#FB923C', '#FACC15', '#307EDE']; // Blue, Orange, Yellow, Red colors
 
-      // Append to container
-      sparkleContainer.appendChild(sparkle);
+          // Particle constructor to create particles with smooth glowing behavior
+          function Particle() {
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+            this.size = Math.random() * 3 + 2; // Smaller sizes for a more subtle effect
+            this.color = colors[Math.floor(Math.random() * colors.length)];
+            this.opacity = Math.random() * 0.5 + 0.3; // Initial opacity between 0.3 and 0.8
+            this.opacityChange = Math.random() * 0.005 + 0.002; // Slower opacity change to reduce flicker
+            this.blur = Math.random() * 10 + 5; // Random initial blur size
+            this.blurChange = Math.random() * 0.03 + 0.02; // Slower blur fluctuation for smooth glow
+          }
 
-      // Remove sparkle after animation
-      setTimeout(() => sparkle.remove(), 3000);
-    }
+          // Update the particle's properties to create a smooth glow effect
+          Particle.prototype.update = function () {
+            // Adjust opacity for smooth glow up and down
+            this.opacity += this.opacityChange;
+            if (this.opacity >= 1 || this.opacity <= 0) {
+              this.opacityChange = -this.opacityChange;
+            }
 
-    // Generate sparkles at intervals
-    function generateSparkles() {
-      if (sparkleContainer.childElementCount < sparkleCount) {
-        createSparkle();
-      }
-    }
+            // Adjust blur size to create a flowing effect
+            this.blur += this.blurChange;
+            if (this.blur >= 20 || this.blur <= 5) {
+              this.blurChange = -this.blurChange;
+            }
+          };
 
-    // Intersection Observer to pause/resume animations based on visibility
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          sparkleInterval = setInterval(generateSparkles, 300);
-        } else {
-          clearInterval(sparkleInterval);
+          // Draw the particle with dynamic glow and smooth transition
+          Particle.prototype.draw = function () {
+            ctx.fillStyle = this.color;
+            ctx.globalAlpha = this.opacity; // Set particle's current opacity
+            ctx.shadowBlur = this.blur; // Dynamic blur for smooth glow effect
+            ctx.shadowColor = this.color; // Glow color matches particle color
+
+            ctx.beginPath();
+            ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+            ctx.closePath();
+            ctx.fill();
+
+            // Reset shadow blur and global alpha to avoid affecting other particles
+            ctx.shadowBlur = 0;
+            ctx.globalAlpha = 1;
+          };
+
+          // Create an array of particles to animate
+          function createParticles() {
+            particlesArray = [];
+            for (var i = 0; i < 50; i++) { // Number of particles
+              particlesArray.push(new Particle());
+            }
+          }
+
+          // Main animation loop
+          function animateParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas before each frame
+
+            for (var i = 0; i < particlesArray.length; i++) {
+              particlesArray[i].update(); // Update each particle's properties
+              particlesArray[i].draw();   // Draw the particle on canvas
+            }
+
+            requestAnimationFrame(animateParticles); // Request the next animation frame
+          }
+
+          // Adjust canvas size on window resize
+          window.addEventListener('resize', function () {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            createParticles(); // Recreate particles when resizing
+          });
+
+          // Initial particle creation and animation start
+          createParticles();
+          animateParticles();
         }
       });
-    });
-    observer.observe(sparkleContainer);
-
-    // Initial sparkles
-    for (let i = 0; i < sparkleCount; i++) {
-      createSparkle();
-    }
-
-    // Animation keyframes
-    const style = document.createElement('style');
-    style.innerHTML = `
-      @keyframes sparkle-shine {
-        0%, 100% {
-          transform: scale(0);
-          opacity: 0;
-        }
-        50% {
-          transform: scale(1.3);
-          opacity: 1;
-          filter: blur(1px);
-        }
-      }
-    `;
-    document.head.appendChild(style);
-  </script>
-
-
+    </script>
 
 
   <script>
@@ -1428,18 +1493,18 @@
     gsap.registerPlugin(ScrollTrigger);
 
     // Detect screen size
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
 
     // Adjust animation settings based on screen size
     const animationSettings = {
-      duration: isMobile ? 1.2 : 0.8, // Longer duration on mobile for better visibility
+      duration: isSmallScreen ? 1.2 : 0.8, // Longer duration on mobile for better visibility
       opacity: 1,
       y: 0,
       ease: "power2.out",
     };
 
     const scrollTriggerSettings = {
-      start: isMobile ? "top 80%" : "top 90%", // Trigger earlier on mobile
+      start: isSmallScreen ? "top 80%" : "top 90%", // Trigger earlier on mobile
       toggleActions: "play none none none",
       refreshPriority: 1,
     };
@@ -1447,7 +1512,7 @@
     gsap.utils.toArray('#features, #solutions, #support, #about').forEach(section => {
       gsap.fromTo(
         section,
-        { opacity: 0, y: isMobile ? 100 : 50 }, // Increase Y movement for mobile
+        { opacity: 0, y: isSmallScreen ? 100 : 50 }, // Increase Y movement for mobile
         {
           ...animationSettings,
           scrollTrigger: {
@@ -1459,27 +1524,28 @@
     });
   </script>
 
-  
+
+
   <script>
     const sections = document.querySelectorAll('section');
-      const navLinks = document.querySelectorAll('.nav-link');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-      window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop;
-          if (window.scrollY >= sectionTop - 20) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        navLinks.forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        if (window.scrollY >= sectionTop - 20) {
+          current = section.getAttribute('id');
+        }
       });
+
+      navLinks.forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('href') === `#${current}`) {
+          link.classList.add('active');
+        }
+      });
+    });
 
   </script>
 
@@ -1539,60 +1605,62 @@
     });
   </script>
   <script>
-      // Get all buttons
-        const tabs = document.querySelectorAll("#nav button");
-        const navContainer = document.getElementById("nav");
+    // Get all buttons
+    const tabs = document.querySelectorAll("#nav button");
+    const navContainer = document.getElementById("nav");
 
-        // Variable to track the last clicked tab index
-        let lastClickedIndex = -1;
+    // Variable to track the last clicked tab index
+    let lastClickedIndex = -1;
 
-        // Function to scroll so the next and previous buttons are visible
-        function adjustScroll(tab) {
-          const tabRect = tab.getBoundingClientRect();
-          const containerRect = navContainer.getBoundingClientRect();
-          const tabIndex = Array.from(tabs).indexOf(tab); // Get the current tab's index
+    // Function to scroll so the next and previous buttons are visible
+    function adjustScroll(tab) {
+      const tabRect = tab.getBoundingClientRect();
+      const containerRect = navContainer.getBoundingClientRect();
+      const tabIndex = Array.from(tabs).indexOf(tab); // Get the current tab's index
 
-          let scrollAmount = 0;
+      let scrollAmount = 0;
 
-          // Determine scroll direction (left or right)
-          if (lastClickedIndex !== -1) {
-            if (tabIndex > lastClickedIndex) {
-              // Moving to the right (next tab)
-              const nextButton = tab.nextElementSibling;
-              if (nextButton) {
-                const nextButtonRect = nextButton.getBoundingClientRect();
-                if (nextButtonRect.right > containerRect.right) {
-                  scrollAmount += nextButtonRect.right - containerRect.right + nextButton.offsetWidth / 2;
-                }
-              }
-            } else {
-              // Moving to the left (previous tab)
-              const prevButton = tab.previousElementSibling;
-              if (prevButton) {
-                const prevButtonRect = prevButton.getBoundingClientRect();
-                if (prevButtonRect.left < containerRect.left) {
-                  scrollAmount -= containerRect.left - prevButtonRect.left + prevButton.offsetWidth / 2;
-                }
-              }
+      // Determine scroll direction (left or right)
+      if (lastClickedIndex !== -1) {
+        if (tabIndex > lastClickedIndex) {
+          // Moving to the right (next tab)
+          const nextButton = tab.nextElementSibling;
+          if (nextButton) {
+            const nextButtonRect = nextButton.getBoundingClientRect();
+            if (nextButtonRect.right > containerRect.right) {
+              scrollAmount += nextButtonRect.right - containerRect.right + nextButton.offsetWidth / 2;
             }
           }
-
-          // Scroll the container by the calculated amount
-          if (scrollAmount !== 0) {
-            navContainer.scrollBy({
-              left: scrollAmount,
-              behavior: "smooth",
-            });
+        } else {
+          // Moving to the left (previous tab)
+          const prevButton = tab.previousElementSibling;
+          if (prevButton) {
+            const prevButtonRect = prevButton.getBoundingClientRect();
+            if (prevButtonRect.left < containerRect.left) {
+              scrollAmount -= containerRect.left - prevButtonRect.left + prevButton.offsetWidth / 2;
+            }
           }
-
-          // Update the last clicked index
-          lastClickedIndex = tabIndex;
         }
+      }
 
-        // Add event listener to each button
-        tabs.forEach((tab) => {
-          tab.addEventListener("click", () => adjustScroll(tab));
+      // Scroll the container by the calculated amount
+      if (scrollAmount !== 0) {
+        navContainer.scrollBy({
+          left: scrollAmount,
+          behavior: "smooth",
         });
+      }
+
+      // Update the last clicked index
+      lastClickedIndex = tabIndex;
+    }
+
+    // Add event listener to each button
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", () => adjustScroll(tab));
+    });
+
+
 
   </script>
 
@@ -1607,8 +1675,14 @@
     });
   </script>
 
+  <script>
+    const nav = document.getElementById('nav');
 
-  
+    // Hide the scrollbar
+    hideScrollbar(nav);
+
+  </script>
+
 </body>
 
 </html>
